@@ -350,7 +350,12 @@ function create() {
         var b = game.redGroup.children[res.id];
         console.log(b);
         var angle = res.angle;
-        var scale = (Math.random() + 1) / 2;
+        if ((game.ball.x - game.lx) > game.width / 6 && (game.rx - game.ball.x) > game.width / 6) {
+            var scale = Math.random() / 4 + 0.75;
+        } else {
+            var scale = Math.random() / 2;
+        }
+        
         var time = Math.random() * 4000;
         game.hitArea.x = b.x;
         game.hitArea.y = b.y;
