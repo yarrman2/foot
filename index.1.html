@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="phaser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser-debug-object@0.2.3/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/colors/3.0.0/js/colors.js"></script>
+    <script    src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script> 
+</head>
+
+<body>
+   <style>
+       html, body {
+            height: 100%;
+        }
+        
+        #parent {
+            width:880px;
+            height:550px;
+            background-image: url('bg/football_bg.jpg');
+        }
+        #parent canvas {
+            position: absolute;
+            top: 39px;
+            left: 29px;
+            border:1px solid red;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+            color: #eee;
+            font: caption;
+        }
+
+        .dg {
+        font: caption !important;
+        text-shadow: none !important;
+        }
+
+        .dg .property-name {
+        font: small-caption !important;
+        line-height: 27px !important;
+        }
+   </style>
+  <div id="parent"></div>
+  <script src="appа.js"></script>
+</body>
+
+</html>
