@@ -58,10 +58,10 @@ game.initGame = function () {
     game.updateDisplay = 500;
     game.timeId = game.time.time;
     game.isGameOver = false;
-    game.incSpeed = 200 * Math.floor(Math.random() * 4);
-    game.incSpeedP = 500 * Math.floor(Math.random() * 4);
-    game.incPower = 200 * Math.floor(Math.random() * 4);
-    game.incPowerP = 500 * Math.floor(Math.random() * 4);
+    game.incSpeed = 0;200 * Math.floor(Math.random() * 4);
+    game.incSpeedP = 0;500 * Math.floor(Math.random() * 4);
+    game.incPower = 0;200 * Math.floor(Math.random() * 4);
+    game.incPowerP = 0;500 * Math.floor(Math.random() * 4);
 
 }
 game.angleSectors = [0, 45 ,90, 120, 150];

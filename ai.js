@@ -288,9 +288,9 @@ function getAiAngle(game) {
     result = splitArray(result, angleSectors , 'ang');
     console.log(result);
     if (game.firstPanch) {
-        var id = Math.floor(Math.random() * 4) + 1;
+        //var id = Math.floor(Math.random() * 4) + 1;
         result = result.filter(function (r) {
-            return r.id == id;
+            return r.id == 1 || r.id == 2;
         })    
     }
    /*  if (game.firstPanch) {
