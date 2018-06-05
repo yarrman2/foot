@@ -64,7 +64,7 @@ game.initGame = function () {
     game.incPowerP = 0;500 * Math.floor(Math.random() * 4);
 
 }
-game.angleSectors = [0, 45 ,90, 120, 150];
+game.angleSectors = [0, 25, 45 ,90, 120, 150];
 game.angleSectorsString = game.angleSectors.join(', ')//.map(function (a) {return toRad(a)});
 
 game.stepTimeTotal = 300 * 1000;
