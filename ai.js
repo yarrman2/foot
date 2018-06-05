@@ -40,7 +40,7 @@ function getAiAngle(game) {
             // по прямой
             var btrs = [];
 
-            var coord = continueLine(gx, gy, bx, by);
+            var coord = continueLine(gx, gy, bx, by, 2);
             btrs.push([{
                 x: gx,
                 y: gy,
@@ -78,7 +78,7 @@ function getAiAngle(game) {
                 }
             })();
 
-            coord = continueLine(res.x1, res.y1, res.x2, res.y2);
+            coord = continueLine(res.x1, res.y1, res.x2, res.y2,2);
             //console.log(coord);
             btrs.push(
                 [{
@@ -126,7 +126,7 @@ function getAiAngle(game) {
                 }
             })();
 
-            coord = continueLine(res.x1, res.y1, res.x2, res.y2);
+            coord = continueLine(res.x1, res.y1, res.x2, res.y2,2);
             //console.log(coord);
             btrs.push(
                 [{
@@ -436,10 +436,12 @@ function findNormal(l, idx, radius2) {
     };
 }
 
-function continueLine(x, y, x1, y1) {
+function continueLine(x, y, x1, y1, epsilon) {
+    if (epsilon == undefined) {epsilon = 0;}
     var angb = Phaser.Math.angleBetween(x, y, x1, y1);
     //var t = tanc(x, x1, y, y1);
     var r = game.bradius + game.radius;
+    r = r - Phaser.Math.linear(0, epsilon, Math.random());
     var dy = r * Math.sin(angb);
     var dx = r * Math.cos(angb);
     var x0 = x1 + dx;

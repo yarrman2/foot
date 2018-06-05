@@ -283,7 +283,6 @@ function create() {
         game._stepTimeLeft = game.time.time;
         game.guiLevel.updateDisplay();
         game.isPause = true;
-        if (game.firstPanch) game.firstPanch = false
         var lx = game.leftLine.start.x;       
         var rx = game.rightLine.start.x;     
         if (bs) {
@@ -351,9 +350,9 @@ function create() {
         console.log(b);
         var angle = res.angle;
         if ((game.ball.x - game.lx) > game.width / 6 && (game.rx - game.ball.x) > game.width / 6) {
-            var scale = Math.random() / 4 + 0.75;
+            var scale = Phaser.Math.linear(0.7, 1, Math.random());
         } else {
-            var scale = Math.random() / 2;
+            var scale = Phaser.Math.linear(0.25, 1, Math.random());
         }
         
         var time = Math.random() * 4000;
@@ -391,7 +390,7 @@ function create() {
                     if (game.timeId != timeId) {
                         return;
                     }
-        
+                    if (game.firstPanch) game.firstPanch = false;
                     game.isMoving = 1;
                     game.stepTimeLeft = game.stepTimeTotal;
                     b.body.moveForward(game.power*scale);
@@ -580,6 +579,7 @@ function create() {
             setTimeout(function () {
                 game.isMoving = 1;
                 game.stepTimeLeft = game.stepTimeTotal;
+                if (game.firstPanch) game.firstPanch = false
                 self.body.moveForward(game.powerP * game.hitArea.scale.x);
             }, 0)
             game.currentPlayer = null;
