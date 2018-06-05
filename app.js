@@ -349,7 +349,7 @@ function create() {
         var b = game.redGroup.children[res.id];
         console.log(b);
         var angle = res.angle;
-        if ((game.ball.x - game.lx) > game.width / 6 && (game.rx - game.ball.x) > game.width / 6) {
+        if ((game.ball.x - game.lx) > game.width / 6 /*&& (game.rx - game.ball.x) > game.width / 6*/) {
             var scale = Phaser.Math.linear(0.7, 1, Math.random());
         } else {
             var scale = Phaser.Math.linear(0.25, 1, Math.random());
@@ -507,12 +507,12 @@ function create() {
         ball.body.damping = game.damping;
         ball.pwr = game.power;
         ball.anchor.set(0.5,0.5);
-        ball.addChild(game.add.sprite(0,0, 'select') );
-        ball.select = ball.children[0];
-        ball.select.anchor.set(0.5,0.5);
         ball.addChild(game.add.sprite(0, 0, 'redPl'));
-        ball.curTexture = ball.children[1];
+        ball.curTexture = ball.children[0];
         ball.curTexture.anchor.set(0.5,0.5);
+        ball.addChild(game.add.sprite(0,0, 'select') );
+        ball.select = ball.children[1];
+        ball.select.anchor.set(0.5,0.5);
         ball.select.visible = !game.blueCommand;
         /*ball.events.onInputDown.add(function (self) {
 
@@ -548,14 +548,14 @@ function create() {
         ball.pwr = game.powerP;
         ball.rd = 0;
         ball.anchor.set(0.5,0.5);
-        ball.addChild( game.add.sprite(0,0, 'select') );
-        ball.select = ball.children[0];
-        ball.select.anchor.set(0.5,0.5);
-        ball.select = ball.children[0];
-        ball.select.anchor.set(0.5,0.5);
         ball.addChild(game.add.sprite(0, 0, 'bluePl'));
-        ball.curTexture = ball.children[1];
+        ball.addChild( game.add.sprite(0,0, 'select') );
+        ball.select = ball.children[1];
+        ball.select.anchor.set(0.5,0.5);
+        ball.curTexture = ball.children[0];
         ball.curTexture.anchor.set(0.5,0.5);
+        ball.select = ball.children[1];
+        ball.select.anchor.set(0.5,0.5);
         ball.select.visible = game.blueCommand;
     
         if (game.blueCommand) {
