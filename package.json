@@ -1,0 +1,21 @@
+{
+  "name": "p4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-js-minify": "0.0.3",
+    "gulp-uglify": "^3.0.0",
+    "phaser-ce": "^2.10.5",
+    "pump": "^3.0.0"
+  }
+}
